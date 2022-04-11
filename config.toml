@@ -1,0 +1,7 @@
+baseurl = "https://y37u51k.github.io/"
+languageCode = "ja-jp"
+DefaultContentLanguage = "ja"
+title = 'MSA Activity Log'
+theme = "hugo-theme-techdoc"
+publishdir = "docs"
+canonifyurls = true

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MSA Activity Log</title>
+    <link>https://y37u51k.github.io/</link>
+    <description>Recent content on MSA Activity Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Tue, 12 Apr 2022 03:08:44 +0900</lastBuildDate><atom:link href="https://y37u51k.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Setup</title>
+      <link>https://y37u51k.github.io/activity_log/hugo/hugo-setup/</link>
+      <pubDate>Tue, 12 Apr 2022 03:08:44 +0900</pubDate>
+      
+      <guid>https://y37u51k.github.io/activity_log/hugo/hugo-setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MSA Technical Academy Activity Log</title>
+      <link>https://y37u51k.github.io/activity_log/msa-activity-log/</link>
+      <pubDate>Tue, 12 Apr 2022 03:08:20 +0900</pubDate>
+      
+      <guid>https://y37u51k.github.io/activity_log/msa-activity-log/</guid>
+      <description>hello world hello hugo</description>
+    </item>
+    
+  </channel>
+</rss>
