@@ -2,7 +2,7 @@ baseurl = "https://y37u51k.github.io/"
 
 languageCode = "ja-jp"
 DefaultContentLanguage = "ja"
-title = 'MSA Activity Log'
+title = 'Document'
 theme = "hugo-theme-techdoc"
 
 hasCJKLanguage = true
@@ -17,9 +17,9 @@ canonifyurls = true
 
 [params]
     # Source Code repository section
-    description = "MSA活動記録"
-    # github_repository = "https://github.com/thingsym/hugo-theme-techdoc"
-    # version = "0.9.7"
+    description = "技術ドキュメント・メモ"
+    github_repository = "https://y37u51k.github.io/"
+    version = "0.1.0"
 
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)
