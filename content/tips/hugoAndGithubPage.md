@@ -20,8 +20,6 @@ weight: 10
 ```
     $ hugo new site "hugo-document(任意の名称)"
 ```
-
-    ひな形テンプレート
     
 ```
     hugo-document

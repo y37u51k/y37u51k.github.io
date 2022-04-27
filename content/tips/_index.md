@@ -9,6 +9,6 @@ description: Text about this post
 images:
 ---
 
-## [Hugo And Github Page](./hugoAndGithubPage)
+## [Hugo And Github Page](./hugoandgithubpage)
 
 Hugoの導入とGithub Pageの作成
