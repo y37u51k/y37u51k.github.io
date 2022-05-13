@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on Document</title>
+    <link>https://y37u51k.github.io/tips/</link>
+    <description>Recent content in Tips on Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://y37u51k.github.io/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>開発準備</title>
+      <link>https://y37u51k.github.io/tips/developmentsetup/</link>
+      <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://y37u51k.github.io/tips/developmentsetup/</guid>
+      <description>AWS Toolkit for IntelliJ (Gradle)でのアプリ開発 参考： https://dev.classmethod.jp/articles/aws-toolkit-for-jetbrains-with-java8-gradle/ https://qiita.com/kalzit/items/5d64f93bf75aaaad9915 AWSでのサーバレスアプリケーションの開発／デプロイを効率化するために下記2つを用いる AWS Toolkit for</description>
+    </item>
+    
+    <item>
+      <title>Hugoの導入とGithub Pageの作成</title>
+      <link>https://y37u51k.github.io/tips/hugoandgithubpage/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://y37u51k.github.io/tips/hugoandgithubpage/</guid>
+      <description>Hugoの導入 インストール リリースページから、Win64bitをzipダウンロード 下記の例を参考に任意の場所にHugoのbinフォルダを作成</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>1_事前準備 - Document</title>
+<meta name="description" content="技術ドキュメント・メモ">
+<meta name="generator" content="Hugo 0.96.0" />
+<link href="https://y37u51k.github.io//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://y37u51k.github.io/aws-saga-tutorial/1_preparations/">
+<link rel="stylesheet" href="https://y37u51k.github.io/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://y37u51k.github.io/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script src="https://y37u51k.github.io/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="1_事前準備" />
+<meta property="og:description" content="NodeJSの導入 参考サイト： https://selegee.com/535/ https://tecadmin.net/install-latest-nodejs-amazon-linux/ 公式ページにてv14が指定されているので、14.xを指定して下記コマンドでインストール実行する $ curl --silent --location https://rpm.nodesource.com/setup_14.x |" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://y37u51k.github.io/aws-saga-tutorial/1_preparations/" /><meta property="article:section" content="aws-saga-tutorial" />
+<meta property="article:published_time" content="2022-04-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-13T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1_事前準備"/>
+<meta name="twitter:description" content="NodeJSの導入 参考サイト： https://selegee.com/535/ https://tecadmin.net/install-latest-nodejs-amazon-linux/ 公式ページにてv14が指定されているので、14.xを指定して下記コマンドでインストール実行する $ curl --silent --location https://rpm.nodesource.com/setup_14.x |"/>
+<meta itemprop="name" content="1_事前準備">
+<meta itemprop="description" content="NodeJSの導入 参考サイト： https://selegee.com/535/ https://tecadmin.net/install-latest-nodejs-amazon-linux/ 公式ページにてv14が指定されているので、14.xを指定して下記コマンドでインストール実行する $ curl --silent --location https://rpm.nodesource.com/setup_14.x |"><meta itemprop="datePublished" content="2022-04-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-04-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="288">
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Document</h1><span class="version">Version 0.1.0</span><a href="https://y37u51k.github.io/" class="github"><i class="fab fa-github"></i></a>
+<p class="description">技術ドキュメント・メモ</p>
+
+</header>
+
+<div class="content-container">
+<main><h1>1_事前準備</h1>
+<h2 id="nodejsの導入">NodeJSの導入</h2>
+<p>参考サイト：<br>
+<a href="https://selegee.com/535/">https://selegee.com/535/</a><br>
+<a href="https://tecadmin.net/install-latest-nodejs-amazon-linux/">https://tecadmin.net/install-latest-nodejs-amazon-linux/</a></p>
+<p>公式ページにてv14が指定されているので、14.xを指定して下記コマンドでインストール実行する</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">$ curl --silent --location https://rpm.nodesource.com/setup_14.x | sudo bash -  
+$ sudo yum -y install nodejs
+</code></pre><p>下記コマンドで確認を行う</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">$ npm -v
+6.14.16
+$ node -v
+v14.19.1
+</code></pre><h2 id="aws-cdk-cliのインストール">AWS CDK CLIのインストール</h2>
+<p>参考サイト：<br>
+<a href="https://aws.amazon.com/jp/getting-started/guides/setup-cdk/module-one/">https://aws.amazon.com/jp/getting-started/guides/setup-cdk/module-one/</a></p>
+<p>公式ページにてv 1.89.0が指定されているので、下記コマンドでバージョンを指定してインストール実行する</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">$ npm install -g aws-cdk@1.89.0
+</code></pre><p>下記コマンドで確認を行う</p>
+<pre tabindex="0"><code>$ cdk --version
+1.89.0 (build df7253c)
+</code></pre><h2 id="必要パッケージのインストール">必要パッケージのインストール</h2>
+<p>公式サイトに掲載されているpackage.jsonを利用して必要パッケージを一括インストールする</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">$ npm install
+</code></pre><p>/node_modules 配下に必要パッケージがインストールされていることを確認する</p>
+<div class="edit-meta">
+Last updated on 13 Apr 2022
+
+
+<br>
+Published on 13 Apr 2022
+<br><a href="https://y37u51k.github.io//edit/master/aws-saga-tutorial%5c1_preparations.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://y37u51k.github.io/aws-saga-tutorial/2_deployment/" title="2_環境構築"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - 2_環境構築</a>
+<a class="nav nav-next" href="https://y37u51k.github.io/tips/" title="Tips">Next - Tips <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://y37u51k.github.io/">Home</a></li>
+
+<li class="parent"><a href="https://y37u51k.github.io/aws-saga-tutorial/">AWS公式Sagaパターンチュートリアル</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/3_execution/">3_実行</a></li>
+<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/2_deployment/">2_環境構築</a></li>
+<li class="active"><a href="https://y37u51k.github.io/aws-saga-tutorial/1_preparations/">1_事前準備</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://y37u51k.github.io/tips/">Tips</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://y37u51k.github.io/tips/developmentsetup/">開発準備</a></li>
+<li class=""><a href="https://y37u51k.github.io/tips/hugoandgithubpage/">Hugoの導入とGithub Pageの作成</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
