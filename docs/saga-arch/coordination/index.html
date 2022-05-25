@@ -3,7 +3,7 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>1. Sagaコーディネーション - Document</title>
+<title>1.Sagaコーディネーション - Document</title>
 <meta name="description" content="技術ドキュメント・メモ">
 <meta name="generator" content="Hugo 0.96.0" />
 <link href="https://y37u51k.github.io//index.xml" rel="alternate" type="application/rss+xml">
@@ -17,7 +17,7 @@
 <script src="https://y37u51k.github.io/js/bundle.js"></script><style>
 :root {}
 </style>
-<meta property="og:title" content="1. Sagaコーディネーション" />
+<meta property="og:title" content="1.Sagaコーディネーション" />
 <meta property="og:description" content="Sagaコーディネーション Sagaの実装は各ステップをコーディネートするコードから作られており、下記2通りの手法が存在する 1. Choreography (コレオグラフ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://y37u51k.github.io/saga-arch/coordination/" /><meta property="article:section" content="saga-arch" />
@@ -25,9 +25,9 @@
 <meta property="article:modified_time" content="2022-05-24T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1. Sagaコーディネーション"/>
+<meta name="twitter:title" content="1.Sagaコーディネーション"/>
 <meta name="twitter:description" content="Sagaコーディネーション Sagaの実装は各ステップをコーディネートするコードから作られており、下記2通りの手法が存在する 1. Choreography (コレオグラフ"/>
-<meta itemprop="name" content="1. Sagaコーディネーション">
+<meta itemprop="name" content="1.Sagaコーディネーション">
 <meta itemprop="description" content="Sagaコーディネーション Sagaの実装は各ステップをコーディネートするコードから作られており、下記2通りの手法が存在する 1. Choreography (コレオグラフ"><meta itemprop="datePublished" content="2022-05-24T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-05-24T00:00:00+00:00" />
 <meta itemprop="wordCount" content="974">
@@ -39,15 +39,15 @@
 </header>
 
 <div class="content-container">
-<main><h1>1. Sagaコーディネーション</h1>
+<main><h1>1.Sagaコーディネーション</h1>
 <h2 id="sagaコーディネーション">Sagaコーディネーション</h2>
 <p>Sagaの実装は各ステップをコーディネートするコードから作られており、下記2通りの手法が存在する</p>
 <h4 id="1-choreography-コレオグラフィ">1. Choreography (コレオグラフィ)</h4>
 <p>ワークフロー全体を管理するコントローラーを立てず、各サービスが自立分散的に動作することで整合性を保つ方式<br>
 Sagaの参加サービスが相互に相手のイベントをサブスクライブし、それをトリガーに適切な処理を行う</p>
 <p>Choreography実装パターン例<br>
-<img src="img/choreography-pattern-success.png" alt="choreography-pattern-success.png">
-<img src="img/choreography-pattern-fail.png" alt="choreography-pattern-fail.png"></p>
+<img src="../img/choreography-pattern-success.png" alt="choreography-pattern-success.png">
+<img src="../img/choreography-pattern-fail.png" alt="choreography-pattern-fail.png"></p>
 <p><strong>考慮点</strong></p>
 <ul>
 <li>DB更新とイベントのパブリッシュがアトミックに実行されること</li>
@@ -68,7 +68,7 @@ Sagaの参加サービスが相互に相手のイベントをサブスクライ�
 <p>Sagaサービスに指示を与えるオーケストレーションを定義し、中央集権的に全体を管理する方式<br>
 オーケストレーター(コントローラー)と参加サービスが通信を行い、サービスはそれをトリガーに指示された処理を行う</p>
 <p>Orchestration実装パターン例<br>
-<img src="img/orchestration-pattern.png" alt="orchestration-pattern.png"></p>
+<img src="../img/orchestration-pattern.png" alt="orchestration-pattern.png"></p>
 <p><strong>状態マシンを利用したモデリング方法</strong></p>
 <ul>
 <li>状態マシンを用いると、個々の状態及び状態遷移を管理、可視化することができ、ワークフローの制御やテスト実行も容易となる</li>
@@ -106,7 +106,7 @@ Published on 24 May 2022
 <li class="parent"><a href="https://y37u51k.github.io/saga-arch/">Sagaアーキテクチャ調査</a>
   
 <ul class="sub-menu">
-<li class="active"><a href="https://y37u51k.github.io/saga-arch/coordination/">1. Sagaコーディネーション</a></li>
+<li class="active"><a href="https://y37u51k.github.io/saga-arch/coordination/">1.Sagaコーディネーション</a></li>
 </ul>
   
 </li>
@@ -114,9 +114,9 @@ Published on 24 May 2022
 <li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/">AWS公式Sagaパターンチュートリアル</a>
   
 <ul class="sub-menu">
-<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/3_execution/">3. 実行</a></li>
-<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/2_deployment/">2. 環境構築</a></li>
-<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/1_preparations/">1. 事前準備</a></li>
+<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/3_execution/">3.実行</a></li>
+<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/2_deployment/">2.環境構築</a></li>
+<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/1_preparations/">1.事前準備</a></li>
 </ul>
   
 </li>

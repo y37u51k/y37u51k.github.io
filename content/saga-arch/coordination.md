@@ -1,5 +1,5 @@
 ---
-title: 1. Sagaコーディネーション
+title: 1.Sagaコーディネーション
 date: 2022-05-24
 draft: false
 weight: 10
@@ -14,8 +14,8 @@ Sagaの実装は各ステップをコーディネートするコードから作�
 Sagaの参加サービスが相互に相手のイベントをサブスクライブし、それをトリガーに適切な処理を行う   
 
 Choreography実装パターン例  
-![choreography-pattern-success.png](img/choreography-pattern-success.png)
-![choreography-pattern-fail.png](img/choreography-pattern-fail.png)
+![choreography-pattern-success.png](../img/choreography-pattern-success.png)
+![choreography-pattern-fail.png](../img/choreography-pattern-fail.png)
 
 
 **考慮点**
@@ -36,7 +36,7 @@ Sagaサービスに指示を与えるオーケストレーションを定義し�
 オーケストレーター(コントローラー)と参加サービスが通信を行い、サービスはそれをトリガーに指示された処理を行う  
 
 Orchestration実装パターン例  
-![orchestration-pattern.png](img/orchestration-pattern.png)
+![orchestration-pattern.png](../img/orchestration-pattern.png)
 
 **状態マシンを利用したモデリング方法**  
 - 状態マシンを用いると、個々の状態及び状態遷移を管理、可視化することができ、ワークフローの制御やテスト実行も容易となる  

@@ -8,7 +8,7 @@
     <language>ja-jp</language>
     <lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://y37u51k.github.io/aws-saga-tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>3. 実行</title>
+      <title>3.実行</title>
       <link>https://y37u51k.github.io/aws-saga-tutorial/3_execution/</link>
       <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
       
@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>2. 環境構築</title>
+      <title>2.環境構築</title>
       <link>https://y37u51k.github.io/aws-saga-tutorial/2_deployment/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
       
@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>1. 事前準備</title>
+      <title>1.事前準備</title>
       <link>https://y37u51k.github.io/aws-saga-tutorial/1_preparations/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       
