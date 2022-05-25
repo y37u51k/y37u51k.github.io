@@ -1,5 +1,5 @@
 ---
-title: 1_事前準備
+title: 1. 事前準備
 date: 2022-04-13
 draft: false
 weight: 10
