@@ -27,28 +27,28 @@
     
     <item>
       <title>3.実行</title>
-      <link>https://y37u51k.github.io/aws-saga-tutorial/3_execution/</link>
+      <link>https://y37u51k.github.io/aws-saga-tutorial/3/</link>
       <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://y37u51k.github.io/aws-saga-tutorial/3_execution/</guid>
+      <guid>https://y37u51k.github.io/aws-saga-tutorial/3/</guid>
       <description>構築フローのテスト deploymentセクションで取得したURLをトリガーにステートマシーンのフローを起動する sagaLambda.tsでは</description>
     </item>
     
     <item>
       <title>2.環境構築</title>
-      <link>https://y37u51k.github.io/aws-saga-tutorial/2_deployment/</link>
+      <link>https://y37u51k.github.io/aws-saga-tutorial/2/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://y37u51k.github.io/aws-saga-tutorial/2_deployment/</guid>
+      <guid>https://y37u51k.github.io/aws-saga-tutorial/2/</guid>
       <description>コードの修正 コンパイルを実行する前に適宜コード修正を行う sagaLambda.ts内のStep Functionsデプロイリージョンを環境に合</description>
     </item>
     
     <item>
       <title>1.事前準備</title>
-      <link>https://y37u51k.github.io/aws-saga-tutorial/1_preparations/</link>
+      <link>https://y37u51k.github.io/aws-saga-tutorial/1/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://y37u51k.github.io/aws-saga-tutorial/1_preparations/</guid>
+      <guid>https://y37u51k.github.io/aws-saga-tutorial/1/</guid>
       <description>NodeJSの導入 参考サイト： https://selegee.com/535/ https://tecadmin.net/install-latest-nodejs-amazon-linux/ 公式ページにてv14が指定されているので、14.xを指定して下記コマンドでインストール実行する $ curl --silent --location https://rpm.nodesource.com/setup_14.x |</description>
     </item>
     
