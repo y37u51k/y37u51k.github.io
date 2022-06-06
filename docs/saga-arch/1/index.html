@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>1.Sagaコーディネーション - Document</title>
+<meta name="description" content="技術ドキュメント・メモ">
+<meta name="generator" content="Hugo 0.96.0" />
+<link href="https://y37u51k.github.io//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://y37u51k.github.io/saga-arch/1/">
+<link rel="stylesheet" href="https://y37u51k.github.io/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://y37u51k.github.io/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script src="https://y37u51k.github.io/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="1.Sagaコーディネーション" />
+<meta property="og:description" content="Sagaコーディネーション Sagaの実装は各ステップをコーディネートするコードから作られており、下記2通りの手法が存在する 1. Choreography (コレオグラフ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://y37u51k.github.io/saga-arch/1/" /><meta property="article:section" content="saga-arch" />
+<meta property="article:published_time" content="2022-05-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-24T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1.Sagaコーディネーション"/>
+<meta name="twitter:description" content="Sagaコーディネーション Sagaの実装は各ステップをコーディネートするコードから作られており、下記2通りの手法が存在する 1. Choreography (コレオグラフ"/>
+<meta itemprop="name" content="1.Sagaコーディネーション">
+<meta itemprop="description" content="Sagaコーディネーション Sagaの実装は各ステップをコーディネートするコードから作られており、下記2通りの手法が存在する 1. Choreography (コレオグラフ"><meta itemprop="datePublished" content="2022-05-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-05-24T00:00:00+00:00" />
+<meta itemprop="wordCount" content="974">
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Document</h1><span class="version">Version 0.1.0</span><a href="https://y37u51k.github.io/" class="github"><i class="fab fa-github"></i></a>
+<p class="description">技術ドキュメント・メモ</p>
+
+</header>
+
+<div class="content-container">
+<main><h1>1.Sagaコーディネーション</h1>
+<h2 id="sagaコーディネーション">Sagaコーディネーション</h2>
+<p>Sagaの実装は各ステップをコーディネートするコードから作られており、下記2通りの手法が存在する</p>
+<h4 id="1-choreography-コレオグラフィ">1. Choreography (コレオグラフィ)</h4>
+<p>ワークフロー全体を管理するコントローラーを立てず、各サービスが自立分散的に動作することで整合性を保つ方式<br>
+Sagaの参加サービスが相互に相手のイベントをサブスクライブし、それをトリガーに適切な処理を行う</p>
+<p>Choreography実装パターン例<br>
+<img src="../img/choreography-pattern-success.png" alt="choreography-pattern-success.png">
+<img src="../img/choreography-pattern-fail.png" alt="choreography-pattern-fail.png"></p>
+<p><strong>考慮点</strong></p>
+<ul>
+<li>DB更新とイベントのパブリッシュがアトミックに実行されること</li>
+<li>Sagaの参加サービス間でデータを対応付けられるように設計する必要があること</li>
+</ul>
+<p><strong>メリット</strong></p>
+<ul>
+<li>一元的な制御モジュールが不要であるため、単一障害点がないこと</li>
+<li>各サービスの動きが単純でシンプルであること</li>
+</ul>
+<p><strong>デメリット</strong></p>
+<ul>
+<li>Saga全体を管理するコーディネーターが存在しないため、ワークフローの把握が難しく、実装が複雑・煩雑化する</li>
+<li>新たなサービスを追加する際の影響範囲が大きい</li>
+<li>他サービスは自分に影響するイベントをサブスクライブする必要があるため、相互が密結合になる</li>
+</ul>
+<h4 id="2-orchestration-オーケストレーション">2. Orchestration (オーケストレーション)</h4>
+<p>Sagaサービスに指示を与えるオーケストレーションを定義し、中央集権的に全体を管理する方式<br>
+オーケストレーター(コントローラー)と参加サービスが通信を行い、サービスはそれをトリガーに指示された処理を行う</p>
+<p>Orchestration実装パターン例<br>
+<img src="../img/orchestration-pattern.png" alt="orchestration-pattern.png"></p>
+<p><strong>状態マシンを利用したモデリング方法</strong></p>
+<ul>
+<li>状態マシンを用いると、個々の状態及び状態遷移を管理、可視化することができ、ワークフローの制御やテスト実行も容易となる</li>
+<li>状態遷移によって適切なアクションを定義することで、各サービスを適切に動作させることが可能</li>
+<li>各サービスはローカルDBの更新とオーケストレーターへのメッセージ送信をアトミックに行う必要がある(=トランザクショナルメッセージング)</li>
+</ul>
+<p><strong>メリット</strong></p>
+<ul>
+<li>依存関係が一方向で単純であるため、ワークフローの把握や追跡がしやすい</li>
+<li>状態マシン等を用いることで、ワークフローの全体の制御がしやすい</li>
+<li>各サービスはオーケストレーター以外と通信を行わないため、コレオグラフィと比較して疎結合な構成を組みやすい</li>
+</ul>
+<p><strong>デメリット</strong></p>
+<ul>
+<li>オーケストレーターという単一障害点が発生し、オーケストレーターに障害が発生するとワークフロー全体が機能しない</li>
+<li>サービスの修正に対して常にオーケストレーターの追加実装が必要となる</li>
+</ul>
+<div class="edit-meta">
+Last updated on 24 May 2022
+
+
+<br>
+Published on 24 May 2022
+<br><a href="https://y37u51k.github.io//edit/master/saga-arch%5c1.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://y37u51k.github.io/saga-arch/2/" title="2.データデザイン"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - 2.データデザイン</a>
+<a class="nav nav-next" href="https://y37u51k.github.io/aws-saga-tutorial/" title="AWS公式Sagaパターンチュートリアル">Next - AWS公式Sagaパターンチュートリアル <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://y37u51k.github.io/">Home</a></li>
+
+<li class="parent"><a href="https://y37u51k.github.io/saga-arch/">Sagaアーキテクチャ調査</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://y37u51k.github.io/saga-arch/2/">2.データデザイン</a></li>
+<li class="active"><a href="https://y37u51k.github.io/saga-arch/1/">1.Sagaコーディネーション</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/">AWS公式Sagaパターンチュートリアル</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/3/">3.実行</a></li>
+<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/2/">2.環境構築</a></li>
+<li class=""><a href="https://y37u51k.github.io/aws-saga-tutorial/1/">1.事前準備</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://y37u51k.github.io/tips/">Tips</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://y37u51k.github.io/tips/developmentsetup/">開発準備</a></li>
+<li class=""><a href="https://y37u51k.github.io/tips/hugoandgithubpage/">Hugoの導入とGithub Pageの作成</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

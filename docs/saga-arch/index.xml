@@ -8,11 +8,20 @@
     <language>ja-jp</language>
     <lastBuildDate>Tue, 24 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://y37u51k.github.io/saga-arch/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>2.データデザイン</title>
+      <link>https://y37u51k.github.io/saga-arch/2/</link>
+      <pubDate>Mon, 06 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://y37u51k.github.io/saga-arch/2/</guid>
+      <description>1:1パターン(AWSチュートリアルパターン)</description>
+    </item>
+    
+    <item>
       <title>1.Sagaコーディネーション</title>
-      <link>https://y37u51k.github.io/saga-arch/coordination/</link>
+      <link>https://y37u51k.github.io/saga-arch/1/</link>
       <pubDate>Tue, 24 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://y37u51k.github.io/saga-arch/coordination/</guid>
+      <guid>https://y37u51k.github.io/saga-arch/1/</guid>
       <description>Sagaコーディネーション Sagaの実装は各ステップをコーディネートするコードから作られており、下記2通りの手法が存在する 1. Choreography (コレオグラフ</description>
     </item>
     

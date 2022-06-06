@@ -1,0 +1,48 @@
+@startuml tutorial-er-diagram
+entity rentals {
+* pk :trip_id
+* sk :carRentalReservationID
+----
+* id :carRentalReservationID
+* rental :rental
+* rental_from
+* rental_to
+* transaction_status
+* trip_id
+}
+
+entity payments {
+* pk :trip_id
+* sk :paymentID
+----
+* amount
+* currency
+* id :paymentID
+* transaction_status
+* trip_id
+}
+
+entity flights {
+* pk :trip_id
+* sk :flightReservationID
+----
+* arrive_city：
+* arrive_time
+* depart_city
+* depart_time
+* id :flightReservationID
+* transaction_status
+* trip_id
+}
+
+flights }|-l|{ payments
+payments }|-l|{ rentals
+rentals }|-l|{ flights
+
+note left of flights: reserve->confirmで、\ntransaction_statusがpending->confirmedとなる\nその際にpkは同一でsk="FLIGHT#flightReservationID"
+note bottom of rentals: reserve->confirmで、\ntransaction_statusがpending->confirmedとなる\nその際にpkは同一でsk="CAR#reservationID"
+note right of payments: reserveRentalが完了した後、\nprocessに進み、transaction_statusがconfirmedとなる
+
+@enduml
+
+
